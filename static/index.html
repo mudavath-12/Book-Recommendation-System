@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendations</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <i class="fas fa-book-reader header-icon"></i>
+            <h1>Book Recommendations</h1>
+            <p>Discover your next favorite book</p>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="bookTitle" placeholder="Enter a book title...">
+            <button id="searchButton">
+                <i class="fas fa-search"></i> Search
+            </button>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <div id="recommendations" class="recommendations"></div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+<!-- <div class="add-book-container">
+    <h2>Add a New Book</h2>
+    <form id="addBookForm">
+        <input type="text" id="newBookTitle" placeholder="Book Title" required>
+        <input type="text" id="newBookAuthors" placeholder="Authors (comma-separated)" required>
+        <textarea id="newBookDescription" placeholder="Description" required></textarea>
+        <input type="number" id="newBookYear" placeholder="Publish Year" required>
+        <input type="text" id="newBookLanguage" placeholder="Language" required>
+        <input type="text" id="newBookSubjects" placeholder="Subjects (comma-separated)" required>
+        <input type="url" id="newBookImageUrl" placeholder="Image URL (optional)">
+        <button type="submit">Add Book</button>
+    </form>
+    <div id="addBookMessage"></div>
+</div> -->
