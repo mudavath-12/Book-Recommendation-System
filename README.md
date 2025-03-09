@@ -15,7 +15,7 @@ A simple web application that provides book recommendations using Open Library A
 ## Project Preview
 Here’s a preview of what the project looks like:
 
-![Project](assets/screenshot.png)
+![Project](assets/screenshot.jpg)
 
 ## Installation  
 
