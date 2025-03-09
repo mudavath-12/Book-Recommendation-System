@@ -12,6 +12,11 @@ A simple web application that provides book recommendations using Open Library A
 - **Backend:** Flask (Python)  
 - **API Used:** Open Library API  
 
+## Project Preview
+Here’s a preview of what the project looks like:
+
+![Project](assets/screenshot.png)
+
 ## Installation  
 
 1. Clone the repository:  
