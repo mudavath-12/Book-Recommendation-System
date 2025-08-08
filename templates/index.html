@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>📚 Book Recommendation System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f8f9fa;
+        }
+        .card-img-top {
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-4">📖 Book Recommendation System</h1>
+
+        <!-- Search Form -->
+        <form method="POST" action="/" class="row justify-content-center align-items-end mb-4">
+            <div class="col-md-4 mb-2">
+                <input type="text" name="title" class="form-control" placeholder="Enter Book Title..." required>
+            </div>
+            <div class="col-md-3 mb-2">
+                <select name="genre_filter" class="form-select">
+                    <option value="">All Genres</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Biography">Biography</option>
+                    <option value="Self-Help">Self-Help</option>
+                    <option value="History">History</option>
+                </select>
+            </div>
+            <div class="col-md-3 mb-2">
+                <select name="sort_by" class="form-select">
+                    <option value="">Sort by</option>
+                    <option value="rating">Rating (High to Low)</option>
+                    <option value="price">Price (Low to High)</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-2">
+                <button class="btn btn-primary w-100" type="submit">Search</button>
+            </div>
+        </form>
+
+        {% if books %}
+            <h3 class="text-center mb-4">Results for "{{ title }}"</h3>
+            <div class="row">
+                {% for book in books %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        {% if book.thumbnail %}
+                        <img src="{{ book.thumbnail }}" class="card-img-top" alt="Book Cover">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ book.title }}</h5>
+                            <p class="card-text"><strong>Author:</strong> {{ book.author }}</p>
+                            <p class="card-text"><strong>Genre:</strong> {{ book.genre }}</p>
+                            <p class="card-text"><strong>Rating:</strong> {{ book.rating }}</p>
+                            <p class="card-text"><strong>Price:</strong> {{ book.price }}</p>
+                            <a href="{{ book.preview_link }}" target="_blank" class="btn btn-outline-primary">Preview</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
